@@ -14,7 +14,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         let skView = self.view as! SKView
         skView.showsFPS = true
         skView.showsNodeCount = true
@@ -22,8 +21,11 @@ class GameViewController: UIViewController {
         let gameScene = GameScene(size: skView.frame.size)
         
         skView.presentScene(gameScene)
+        
     }
 
+    
+    
     override func shouldAutorotate() -> Bool {
         return true
     }
@@ -44,4 +46,7 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    
+    
 }

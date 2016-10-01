@@ -24,8 +24,6 @@
 		4567B5281D9EE09800203189 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B5271D9EE09800203189 /* BaseController.swift */; };
 		4567B52B1D9EE0EC00203189 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B52A1D9EE0EC00203189 /* View.swift */; };
 		4568F1EE1D8457EC00D70B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568F1ED1D8457EC00D70B3E /* AppDelegate.swift */; };
-		4568F1F01D8457EC00D70B3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4568F1EF1D8457EC00D70B3E /* GameScene.sks */; };
-		4568F1F21D8457EC00D70B3E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568F1F11D8457EC00D70B3E /* GameScene.swift */; };
 		4568F1F41D8457EC00D70B3E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568F1F31D8457EC00D70B3E /* GameViewController.swift */; };
 		4568F1F71D8457EC00D70B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4568F1F51D8457EC00D70B3E /* Main.storyboard */; };
 		4568F1F91D8457EC00D70B3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4568F1F81D8457EC00D70B3E /* Assets.xcassets */; };
@@ -36,6 +34,10 @@
 		4568F2131D8458DD00D70B3E /* EnemyCar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568F2121D8458DD00D70B3E /* EnemyCar2.png */; };
 		4568F2151D845D6000D70B3E /* backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568F2141D845D6000D70B3E /* backGround.png */; };
 		4568F2181D84605100D70B3E /* CGPointUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568F2171D84605100D70B3E /* CGPointUtil.swift */; };
+		4583646D1DA0221E00269813 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4583646C1DA0221E00269813 /* logo.jpg */; };
+		458364721DA02A9D00269813 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 458364701DA02A9D00269813 /* GameScene.sks */; };
+		458364731DA02A9D00269813 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458364711DA02A9D00269813 /* GameScene.swift */; };
+		458364771DA02B3200269813 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458364761DA02B3200269813 /* GameOverScene.swift */; };
 		45A33BA81D9F5A85006432AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A33BA71D9F5A85006432AC /* Constants.swift */; };
 		45A33BAA1D9F5CC0006432AC /* SKActionUti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A33BA91D9F5CC0006432AC /* SKActionUti.swift */; };
 		45A33BAC1D9F7771006432AC /* PoliceCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A33BAB1D9F7771006432AC /* PoliceCarController.swift */; };
@@ -65,8 +67,6 @@
 		4567B52A1D9EE0EC00203189 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = View.swift; path = Views/View.swift; sourceTree = "<group>"; };
 		4568F1EA1D8457EC00D70B3E /* Oto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4568F1ED1D8457EC00D70B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4568F1EF1D8457EC00D70B3E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		4568F1F11D8457EC00D70B3E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		4568F1F31D8457EC00D70B3E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4568F1F61D8457EC00D70B3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4568F1F81D8457EC00D70B3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +78,10 @@
 		4568F2121D8458DD00D70B3E /* EnemyCar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnemyCar2.png; sourceTree = "<group>"; };
 		4568F2141D845D6000D70B3E /* backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround.png; sourceTree = "<group>"; };
 		4568F2171D84605100D70B3E /* CGPointUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointUtil.swift; sourceTree = "<group>"; };
+		4583646C1DA0221E00269813 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
+		458364701DA02A9D00269813 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = Scenes/GameScene.sks; sourceTree = "<group>"; };
+		458364711DA02A9D00269813 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = Scenes/GameScene.swift; sourceTree = "<group>"; };
+		458364761DA02B3200269813 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = Scenes/GameOverScene.swift; sourceTree = "<group>"; };
 		45A33BA71D9F5A85006432AC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
 		45A33BA91D9F5CC0006432AC /* SKActionUti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKActionUti.swift; path = Utilities/SKActionUti.swift; sourceTree = "<group>"; };
 		45A33BAB1D9F7771006432AC /* PoliceCarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoliceCarController.swift; path = Controllers/PoliceCarController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		455C62621D853560006DEEEB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				458364691DA01E9400269813 /* Particle */,
 				4568F2031D8457FE00D70B3E /* Images */,
 				455C625D1D853539006DEEEB /* Sound */,
 			);
@@ -174,12 +179,9 @@
 				4567B52C1D9EE3F100203189 /* Constants */,
 				4567B5241D9EDF9B00203189 /* Controllers */,
 				4567B5291D9EE0B600203189 /* Views */,
-				4568F1ED1D8457EC00D70B3E /* AppDelegate.swift */,
-				4568F1EF1D8457EC00D70B3E /* GameScene.sks */,
-				4568F1F11D8457EC00D70B3E /* GameScene.swift */,
-				45C366E61D86F5AF00EBF882 /* Explosion.sks */,
-				45C366E71D86F5AF00EBF882 /* spark.png */,
+				4583646B1DA01EE600269813 /* Scenes */,
 				4568F1F31D8457EC00D70B3E /* GameViewController.swift */,
+				4568F1ED1D8457EC00D70B3E /* AppDelegate.swift */,
 				4568F1F51D8457EC00D70B3E /* Main.storyboard */,
 				4568F1F81D8457EC00D70B3E /* Assets.xcassets */,
 				4568F1FA1D8457EC00D70B3E /* LaunchScreen.storyboard */,
@@ -191,6 +193,7 @@
 		4568F2031D8457FE00D70B3E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4583646C1DA0221E00269813 /* logo.jpg */,
 				45BA25741DA006AA002876DD /* launchImage.jpeg */,
 				455C62511D850F73006DEEEB /* tree.png */,
 				455C624F1D850F6B006DEEEB /* bridge1.png */,
@@ -214,6 +217,33 @@
 				45A33BA91D9F5CC0006432AC /* SKActionUti.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		458364691DA01E9400269813 /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				4583646A1DA01EB700269813 /* Fire */,
+			);
+			name = Particle;
+			sourceTree = "<group>";
+		};
+		4583646A1DA01EB700269813 /* Fire */ = {
+			isa = PBXGroup;
+			children = (
+				45C366E61D86F5AF00EBF882 /* Explosion.sks */,
+				45C366E71D86F5AF00EBF882 /* spark.png */,
+			);
+			name = Fire;
+			sourceTree = "<group>";
+		};
+		4583646B1DA01EE600269813 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				458364701DA02A9D00269813 /* GameScene.sks */,
+				458364711DA02A9D00269813 /* GameScene.swift */,
+				458364761DA02B3200269813 /* GameOverScene.swift */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +307,9 @@
 			files = (
 				455C62661D85357B006DEEEB /* PoliceCar2.png in Resources */,
 				455C624E1D850F67006DEEEB /* bridge2.png in Resources */,
-				4568F1F01D8457EC00D70B3E /* GameScene.sks in Resources */,
 				455C62611D853558006DEEEB /* CrashCar.mp3 in Resources */,
+				4583646D1DA0221E00269813 /* logo.jpg in Resources */,
+				458364721DA02A9D00269813 /* GameScene.sks in Resources */,
 				455C62641D853577006DEEEB /* EnemyCar4.png in Resources */,
 				45C366E51D86E9F300EBF882 /* Car.png in Resources */,
 				45C366E91D86F5AF00EBF882 /* spark.png in Resources */,
@@ -306,7 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4563C2AA1D9FB3D900A78CEC /* PlayerCarView.swift in Sources */,
-				4568F1F21D8457EC00D70B3E /* GameScene.swift in Sources */,
 				4568F1F41D8457EC00D70B3E /* GameViewController.swift in Sources */,
 				4567B5261D9EE00300203189 /* PlayerCarController.swift in Sources */,
 				4563C2AC1D9FB41900A78CEC /* PoliceCarView.swift in Sources */,
@@ -317,10 +347,12 @@
 				4567B5281D9EE09800203189 /* BaseController.swift in Sources */,
 				4563C2B01D9FBF1400A78CEC /* FireController.swift in Sources */,
 				4567B52B1D9EE0EC00203189 /* View.swift in Sources */,
+				458364731DA02A9D00269813 /* GameScene.swift in Sources */,
 				4568F1EE1D8457EC00D70B3E /* AppDelegate.swift in Sources */,
 				4563C2AE1D9FBB9F00A78CEC /* EnemyCarView.swift in Sources */,
 				4563C2A61D9F9B7800A78CEC /* BackGroundController.swift in Sources */,
 				45A33BAC1D9F7771006432AC /* PoliceCarController.swift in Sources */,
+				458364771DA02B3200269813 /* GameOverScene.swift in Sources */,
 				45A33BA81D9F5A85006432AC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

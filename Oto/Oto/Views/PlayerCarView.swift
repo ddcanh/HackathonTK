@@ -11,9 +11,12 @@ import SpriteKit
 typealias IncreaseHealth = (() -> Void)
 typealias CrashEnemy = (() -> Void)
 typealias CrashPolice = (() -> Void)
+typealias GetHitPoliceBullet = (() -> Void)
+
 
 class PlayerCarView: View {
     var increaseHealth: IncreaseHealth?
     var crashEnemy: CrashEnemy?
     var crashPolice: CrashPolice?
+    var getHitPoliceBullet: GetHitPoliceBullet?
 }

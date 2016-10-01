@@ -10,13 +10,13 @@ import SpriteKit
 
 class PoliceCarController: BaseController {
     
+    let SHOT_DURATION: Double = 5
+    
     override func setup(parent: SKNode) {
         setupPhysics()
-        
+    
     }
-    
 
-    
     func setupPhysics() {
         self.view.physicsBody = SKPhysicsBody(rectangleOfSize: self.view.size)
         self.view.physicsBody?.categoryBitMask = PHYSICS_MASK_POLICE_CAR
@@ -42,6 +42,43 @@ class PoliceCarController: BaseController {
         } else if view.position.y > positionY + 1 {
             view.position.y -= speedY
         }
+    }
+    
+    func addShotAction(parent: SKNode) {
+        var textures : [SKTexture] = []
+        for i in 1...2 {
+            let imageName = "PoliceCar\(i).png"
+            let texture = SKTexture(imageNamed: imageName)
+            textures.append(texture)
+        }
+        
+        let animate = SKAction.animateWithTextures(textures, timePerFrame: 0.02)
+        
+        self.view.runAction(
+            SKAction.repeatActionForever(
+                    SKAction.sequence([
+                        SKAction.waitForDuration(4),
+                        SKAction.repeatAction(animate, count: 50),
+                        SKAction.runBlock { self.addBullet(parent) }
+                    ])
+            )
+        )
+    }
+    
+    func addBullet(parent: SKNode) {
+        let policeBulletView = View(imageNamed: "enemyBullet.png")
+        policeBulletView.position = self.view.position
+        
+        let policeBulletController = PoliceBulletController(view: policeBulletView)
+        policeBulletController.setup(parent)
+        parent.runAction(SKAction.playSoundFileNamed("PoliceBullet.wav", waitForCompletion: false))
+        
+        parent.addChild(policeBulletView)
+    }
+    
+    func updateStage(parent: SKNode) {
+        
+        addShotAction(parent)
     }
     
 }

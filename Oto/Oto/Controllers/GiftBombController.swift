@@ -24,7 +24,7 @@ class GiftBombController: BaseController {
             otherView in
             if let playerCarView = otherView as? PlayerCarView {
                 
-                parent.runAction(SKAction.playSoundFileNamed("Powerup.wav", waitForCompletion: false))
+                parent.runAction(SKAction.playSoundFileNamed("Explosion2.wav", waitForCompletion: false))
                 self.view.removeFromParent()
                 let dic: NSDictionary = ["parent": parent]
                 NSNotificationCenter.defaultCenter().postNotificationName("Eat Bomb", object: nil, userInfo: dic as [NSObject : AnyObject])

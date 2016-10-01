@@ -35,7 +35,9 @@ class PlayerCarController: BaseController{
                 self.health -= 20
                 
             }
-
+            playerCarView.getHitPoliceBullet = {
+                self.health -= 10
+            }
         }
     }
     

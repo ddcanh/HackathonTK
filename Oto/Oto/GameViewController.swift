@@ -9,6 +9,8 @@
 import UIKit
 import SpriteKit
 
+var gameStage: Int = 0
+
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,6 +21,8 @@ class GameViewController: UIViewController {
         skView.showsNodeCount = true
         
         let gameScene = GameScene(size: skView.frame.size)
+        
+        gameStage = 1
         
         skView.presentScene(gameScene)
         

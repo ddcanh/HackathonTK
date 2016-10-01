@@ -26,6 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var minTime: CFTimeInterval = 2
     var score = 0
     var scoreLabel: SKLabelNode!
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
@@ -84,8 +85,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Called before each frame is rendered */
         
         policeCarController.movePolice(5, speedY: 1, player: playerCarController.view, playerHealth: playerCarController.health)
-    
         
+
         var enemySpeed: Double = 50
         if score < 200 {
             minTime = 3
@@ -269,12 +270,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         policeCarController.setup(self)
         addChild(policeView)
         
+        if gameStage >= 2 {
+            policeCarController.updateStage(self)
+        }
+        
     }
     
     
     func updateScore() {
         score += 1
         scoreLabel.text = String(score)
+        
+        if (score > 500) && (gameStage == 1) {
+            moveToStage(2)
+        }
     }
     
     func addScore() {
@@ -297,6 +306,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func gameOver() {
         
+        gameStage = 1
+        
         let gameOverText = SKLabelNode(text: "GAME OVER")
         gameOverText.fontSize = 44
         gameOverText.fontColor = UIColor.redColor()
@@ -318,7 +329,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backgroundController.setup(self)
     }
     
+    func moveToStage(stage: Int) {
+        
+        gameStage += 1
+        
+        self.paused = true
+        playerCarController.view.paused = true
+        
+        let moveStageText = SKLabelNode(text: "Move To Stage \(stage)")
+        moveStageText.fontSize = 30
+        moveStageText.fontName = "Tahoma"
+        moveStageText.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+        
+        addChild(moveStageText)
     
+        let tapText = SKLabelNode(text: "Tap To Start")
+        tapText.fontSize = 20
+        tapText.fontName = "Tahoma"
+        tapText.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 30)
+        
+        addChild(tapText)
+        
+        
+    }
     
 }
 

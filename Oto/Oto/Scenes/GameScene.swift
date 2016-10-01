@@ -20,9 +20,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var policeCarController: PoliceCarController!
     
     
-    //var health: CGFloat = 50
-    var maxHealth: CGFloat = 80
-    
     var previousTime: CFTimeInterval = -1
     var countForE = 0
     
@@ -42,6 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
         //addLight()
+        
     }
     
     func configurePhysics() {
@@ -79,10 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Called before each frame is rendered */
         
         policeCarController.movePolice(5, speedY: 1, player: playerCarController.view, playerHealth: playerCarController.health)
-        
-        if playerCarController.health <= 0{
-            gameOver()
-        }
+    
         
         var enemySpeed: Double = 50
         if score < 200 {
@@ -134,6 +129,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let viewA = bodyA.node as! View
         let viewB = bodyB.node as! View
         
+        if (bodyA.categoryBitMask | bodyB.categoryBitMask) == (PHYSICS_MASK_PLAYER_CAR | PHYSICS_MASK_POLICE_CAR) {
+            gameOver()
+        }
+        
         if let aHandleContact = viewA.handleContact {
             aHandleContact(otherView: viewB)
         }
@@ -141,6 +140,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let bHandleContact = viewB.handleContact {
             bHandleContact(otherView: viewA)
         }
+        
+        
     }
     
     
@@ -275,6 +276,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //playerCarController.view.removeFromParent()
         
         self.paused = true
+        
+        let gameOverScene = GameOverScene(size: (self.view?.frame.size)!)
+        
+        gameOverScene.score = self.score
+        
+        self.view?.presentScene(gameOverScene, transition: SKTransition.fadeWithColor(UIColor.clearColor(), duration: 1))
     }
     
     func addBackGround() {

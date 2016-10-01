@@ -27,8 +27,10 @@ class BackGroundController {
     
     func addBackgroundMusic(parent: SKNode) {
         if let musicURL = NSBundle.mainBundle().URLForResource("backGround_Sound", withExtension: "mp3") {
+        
         backgroundMusic = SKAudioNode(URL: musicURL)
-            parent.addChild(backgroundMusic)
+        
+        parent.addChild(backgroundMusic)
         }
         
     }

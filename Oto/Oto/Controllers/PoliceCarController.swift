@@ -12,12 +12,10 @@ class PoliceCarController: BaseController {
     
     override func setup(parent: SKNode) {
         setupPhysics()
-        setupRespond()
-    }
-    
-    func setupRespond() {
         
     }
+    
+
     
     func setupPhysics() {
         self.view.physicsBody = SKPhysicsBody(rectangleOfSize: self.view.size)
@@ -39,9 +37,9 @@ class PoliceCarController: BaseController {
         
         let positionY = player.position.y - player.frame.height/2 - view.frame.height/2 - playerHealth
         
-        if view.position.y < positionY {
+        if view.position.y < positionY - 1 {
             view.position.y += speedY
-        } else if view.position.y > positionY {
+        } else if view.position.y > positionY + 1 {
             view.position.y -= speedY
         }
     }

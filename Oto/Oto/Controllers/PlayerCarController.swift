@@ -33,8 +33,9 @@ class PlayerCarController: BaseController{
             }
             playerCarView.crashEnemy = {
                 self.health -= 20
+                
             }
-            
+
         }
     }
     

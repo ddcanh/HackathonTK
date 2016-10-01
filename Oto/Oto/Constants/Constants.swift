@@ -1,0 +1,20 @@
+//
+//  Constants.swift
+//  Oto
+//
+//  Created by Enrik on 10/1/16.
+//  Copyright © 2016 Enrik. All rights reserved.
+//
+
+import Foundation
+import SpriteKit
+
+let PHYSICS_MASK_PLAYER_CAR = UInt32(1 << 0)
+let PHYSICS_MASK_ENEMY_CAR = UInt32(1 << 1)
+let PHYSICS_MASK_POLICE_CAR = UInt32(1 << 2)
+let PHYSICS_MASK_GIFT_POWER = UInt32(1 << 3)
+
+
+
+let MARGIN_BORDER: CGFloat = 20
+

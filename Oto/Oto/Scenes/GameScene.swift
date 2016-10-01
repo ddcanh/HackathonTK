@@ -34,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addPlayer()
         addPolice()
         addGiftPower()
-        
+        addGiftBomb()
         configurePhysics()
         
 
@@ -50,21 +50,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
-    }
-    
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        if let touch = touches.first {
-            let currentLocation = touch.locationInNode(self)
-            let previousLocation = touch.previousLocationInNode(self)
+        if self.paused == true {
+            let gameScene = GameScene(size: (self.view?.frame.size)!)
             
-            let dx = currentLocation.x - previousLocation.x
-            playerCarController.moveByDx(dx)
-            playerCarController.constraintMove(self)
-            
+            self.view?.presentScene(gameScene, transition: SKTransition.doorsOpenHorizontalWithDuration(1))
         }
         
     }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if playerCarController.view.paused != true {
+            if let touch = touches.first {
+                let currentLocation = touch.locationInNode(self)
+                let previousLocation = touch.previousLocationInNode(self)
+                
+                let dx = currentLocation.x - previousLocation.x
+                playerCarController.moveByDx(dx)
+                playerCarController.constraintMove(self)
+                
+            }
+        }
+    }
+    
     func increasePlayerHealth(notification: NSNotification) {
         if let info = notification.userInfo as? Dictionary<String,CGFloat> {
             if let value = info["AddHealth"] {
@@ -110,14 +117,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 previousTime = currentTime
                 
             }
-            
             if countForE == 1{
                 addEnemy(enemySpeed)
                 countForE = 0
             }
-            
-            
         }
+    
         
     }
     
@@ -144,6 +149,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func addGiftBomb() {
+        
+        let giftBombSpawn = SKAction.runBlock {
+            
+            let giftBombView = View(imageNamed: "Bomb")
+
+            let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftBombView.frame.width - MARGIN_BORDER * 2))) + giftBombView.frame.width/2 + MARGIN_BORDER
+            
+            giftBombView.position = CGPoint(x: postionX, y: self.frame.height)
+            
+            let giftBombController = GiftBombController(view: giftBombView)
+            
+            giftBombController.setup(self)
+            
+            self.addChild(giftBombView)
+            
+        }
+        
+        let giftBombSpawnPeriod = SKAction.sequence([
+            SKAction.waitForDuration(15),
+            giftBombSpawn
+            ])
+        
+        self.runAction(SKAction.repeatActionForever(giftBombSpawnPeriod))
+    }
     
     
     func addGiftPower() {
@@ -191,10 +221,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enemyCarController.setup(self)
         enemyCarController.addRunAction(speed, parent: self)
         
+        enemyView.name = "enemy"
+        
         self.addChild(enemyView)
         
     }
-    
     
     
     func addPlayer() {
@@ -265,6 +296,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOver() {
+        
         let gameOverText = SKLabelNode(text: "GAME OVER")
         gameOverText.fontSize = 44
         gameOverText.fontColor = UIColor.redColor()
@@ -275,19 +307,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //playerCarController.view.removeFromParent()
         
+        playerCarController.view.paused = true
+        
         self.paused = true
         
-        let gameOverScene = GameOverScene(size: (self.view?.frame.size)!)
-        
-        gameOverScene.score = self.score
-        
-        self.view?.presentScene(gameOverScene, transition: SKTransition.fadeWithColor(UIColor.clearColor(), duration: 1))
     }
     
     func addBackGround() {
         backgroundController = BackGroundController()
         backgroundController.setup(self)
     }
+    
+    
+    
 }
 
 

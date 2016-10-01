@@ -26,12 +26,28 @@ class BackGroundController {
     }
     
     func addBackgroundMusic(parent: SKNode) {
-        if let musicURL = NSBundle.mainBundle().URLForResource("backGround_Sound", withExtension: "mp3") {
+        parent.runAction(
+            SKAction.sequence([
+                SKAction.runBlock({ 
+                    if let musicURL = NSBundle.mainBundle().URLForResource("backGround_Sound", withExtension: "mp3") {
+                        
+                        print("addBackgroundMusic")
+                        
+                        self.backgroundMusic = SKAudioNode(URL: musicURL)
+                        
+                    }
+                }),
+                SKAction.waitForDuration(1),
+                SKAction.runBlock({ 
+                     parent.addChild(self.backgroundMusic)
+                    
+                })
+                    
+                ])
+        )
         
-        backgroundMusic = SKAudioNode(URL: musicURL)
         
-        parent.addChild(backgroundMusic)
-        }
+        
         
     }
     

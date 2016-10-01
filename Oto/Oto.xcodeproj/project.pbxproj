@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455560D91DA05491002E0016 /* Powerup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 455560D81DA05491002E0016 /* Powerup.wav */; };
+		455560DD1DA05715002E0016 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 455560DC1DA05715002E0016 /* Bomb.png */; };
+		455560DF1DA05734002E0016 /* GiftBombController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455560DE1DA05734002E0016 /* GiftBombController.swift */; };
 		455C624E1D850F67006DEEEB /* bridge2.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C624D1D850F67006DEEEB /* bridge2.png */; };
 		455C62501D850F6B006DEEEB /* bridge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C624F1D850F6B006DEEEB /* bridge1.png */; };
 		455C62521D850F73006DEEEB /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C62511D850F73006DEEEB /* tree.png */; };
@@ -49,6 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		455560D81DA05491002E0016 /* Powerup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Powerup.wav; sourceTree = "<group>"; };
+		455560DC1DA05715002E0016 /* Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bomb.png; sourceTree = "<group>"; };
+		455560DE1DA05734002E0016 /* GiftBombController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiftBombController.swift; path = Controllers/GiftBombController.swift; sourceTree = "<group>"; };
 		455C624D1D850F67006DEEEB /* bridge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge2.png; sourceTree = "<group>"; };
 		455C624F1D850F6B006DEEEB /* bridge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge1.png; sourceTree = "<group>"; };
 		455C62511D850F73006DEEEB /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			children = (
 				455C625E1D853552006DEEEB /* backGround_Sound.mp3 */,
 				455C62601D853558006DEEEB /* CrashCar.mp3 */,
+				455560D81DA05491002E0016 /* Powerup.wav */,
 			);
 			name = Sound;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 				45A33BAD1D9F823E006432AC /* EnemyCarController.swift */,
 				4563C2A51D9F9B7800A78CEC /* BackGroundController.swift */,
 				4563C2A71D9FA5E300A78CEC /* GiftPowerController.swift */,
+				455560DE1DA05734002E0016 /* GiftBombController.swift */,
 				4563C2AF1D9FBF1400A78CEC /* FireController.swift */,
 			);
 			name = Controllers;
@@ -193,6 +201,7 @@
 		4568F2031D8457FE00D70B3E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				455560DC1DA05715002E0016 /* Bomb.png */,
 				4583646C1DA0221E00269813 /* logo.jpg */,
 				45BA25741DA006AA002876DD /* launchImage.jpeg */,
 				455C62511D850F73006DEEEB /* tree.png */,
@@ -308,11 +317,13 @@
 				455C62661D85357B006DEEEB /* PoliceCar2.png in Resources */,
 				455C624E1D850F67006DEEEB /* bridge2.png in Resources */,
 				455C62611D853558006DEEEB /* CrashCar.mp3 in Resources */,
+				455560D91DA05491002E0016 /* Powerup.wav in Resources */,
 				4583646D1DA0221E00269813 /* logo.jpg in Resources */,
 				458364721DA02A9D00269813 /* GameScene.sks in Resources */,
 				455C62641D853577006DEEEB /* EnemyCar4.png in Resources */,
 				45C366E51D86E9F300EBF882 /* Car.png in Resources */,
 				45C366E91D86F5AF00EBF882 /* spark.png in Resources */,
+				455560DD1DA05715002E0016 /* Bomb.png in Resources */,
 				4568F1FC1D8457EC00D70B3E /* LaunchScreen.storyboard in Resources */,
 				4568F2101D8457FE00D70B3E /* health.png in Resources */,
 				4568F1F91D8457EC00D70B3E /* Assets.xcassets in Resources */,
@@ -338,6 +349,7 @@
 			files = (
 				4563C2AA1D9FB3D900A78CEC /* PlayerCarView.swift in Sources */,
 				4568F1F41D8457EC00D70B3E /* GameViewController.swift in Sources */,
+				455560DF1DA05734002E0016 /* GiftBombController.swift in Sources */,
 				4567B5261D9EE00300203189 /* PlayerCarController.swift in Sources */,
 				4563C2AC1D9FB41900A78CEC /* PoliceCarView.swift in Sources */,
 				4563C2A81D9FA5E300A78CEC /* GiftPowerController.swift in Sources */,

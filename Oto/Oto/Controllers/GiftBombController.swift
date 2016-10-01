@@ -1,17 +1,18 @@
 //
-//  GiftPowerController.swift
+//  BombController.swift
 //  Oto
 //
-//  Created by Enrik on 10/1/16.
+//  Created by Enrik on 10/2/16.
 //  Copyright © 2016 Enrik. All rights reserved.
 //
 
+
 import SpriteKit
 
-class GiftPowerController: BaseController {
+class GiftBombController: BaseController {
     
-    let SPEED: Double = 90
-        
+    let SPEED: Double = 130
+    
     override func setup(parent: SKNode) {
         addRunAction(parent)
         setupPhysics()
@@ -22,17 +23,17 @@ class GiftPowerController: BaseController {
         self.view.handleContact = {
             otherView in
             if let playerCarView = otherView as? PlayerCarView {
-                if let increaseHealth = playerCarView.increaseHealth {
-                    increaseHealth()
-                }
+                
                 parent.runAction(SKAction.playSoundFileNamed("Powerup.wav", waitForCompletion: false))
                 self.view.removeFromParent()
+                let dic: NSDictionary = ["parent": parent]
+                NSNotificationCenter.defaultCenter().postNotificationName("Eat Bomb", object: nil, userInfo: dic as [NSObject : AnyObject])
             }
         }
     }
     
     func addRunAction(parent: SKNode) {
-    
+        
         let distanceToBottom = Double(self.view.position.y + self.view.frame.height)
         
         let timeToBottom = distanceToBottom / SPEED
@@ -51,9 +52,9 @@ class GiftPowerController: BaseController {
     
     func setupPhysics() {
         self.view.physicsBody = SKPhysicsBody(rectangleOfSize: self.view.size)
-        self.view.physicsBody?.categoryBitMask = PHYSICS_MASK_GIFT_POWER
+        self.view.physicsBody?.categoryBitMask = PHYSICS_MASK_GIFT_BOMB
         self.view.physicsBody?.collisionBitMask = 0
         self.view.physicsBody?.contactTestBitMask = PHYSICS_MASK_PLAYER_CAR
     }
-
+    
 }

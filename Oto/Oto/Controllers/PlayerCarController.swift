@@ -13,15 +13,16 @@ class PlayerCarController: BaseController{
     let MAX_HEALTH: CGFloat = 70
     
     var health: CGFloat = 50
+    var isShielded: Bool = false
     
     override func setup(parent: SKNode) {
        setupPhysics()
-       setupRespond()
+       setupRespond(parent)
        
         
     }
     
-    func setupRespond() {
+    func setupRespond(parent: SKNode) {
         if let playerCarView = self.view as? PlayerCarView {
             playerCarView.increaseHealth = {
                 
@@ -32,11 +33,26 @@ class PlayerCarController: BaseController{
                 
             }
             playerCarView.crashEnemy = {
-                self.health -= 20
+                if self.isShielded == false {
+                    if self.health > 0 {
+                        self.health -= 20
+                    }
+                }
                 
             }
             playerCarView.getHitPoliceBullet = {
-                self.health -= 10
+                if self.isShielded == false {
+                    if self.health > 0{
+                         self.health -= 10
+                    }
+                }
+            }
+            playerCarView.eatGiftBullet = {
+                self.addShotAction(parent)
+            }
+            playerCarView.eatGiftAmor = {
+                self.takeShield()
+                
             }
         }
     }
@@ -59,4 +75,66 @@ class PlayerCarController: BaseController{
     func increaseHealthForPlayer() {
         self.health += 10
     }
+    
+    
+    func addShotAction(parent: SKNode) {
+        self.view.runAction(
+            SKAction.repeatAction(
+                SKAction.sequence([
+                SKAction.runBlock { self.addBullet(parent) },
+                SKAction.waitForDuration(1)
+                ])
+            ,count: 5)
+        )
+        
+    }
+
+    func addBullet(parent: SKNode) {
+        let playerBulletView = View(imageNamed: "playerBullet.png")
+        playerBulletView.position = self.view.position
+        
+        let playerBulletController = PlayerBulletController(view: playerBulletView)
+        playerBulletController.setup(parent)
+        parent.runAction(SKAction.playSoundFileNamed("PlayerBullet.wav", waitForCompletion: false))
+        
+        parent.addChild(playerBulletView)
+    }
+    
+    
+    func takeShield() {
+        var textures : [SKTexture] = []
+        for i in 1...5 {
+            let imageName = "Car\(i).png"
+            let texture = SKTexture(imageNamed: imageName)
+            textures.append(texture)
+        }
+        
+        let animate = SKAction.animateWithTextures(textures, timePerFrame: 0.02)
+        
+        self.view.runAction(
+            SKAction.sequence([
+                SKAction.runBlock({ 
+                    self.isShielded = true
+                    self.view.runAction(SKAction.repeatAction(animate, count: 50))
+                }),
+                SKAction.waitForDuration(5),
+                SKAction.runBlock({ 
+                    self.isShielded = false
+                })
+            ])
+        )
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

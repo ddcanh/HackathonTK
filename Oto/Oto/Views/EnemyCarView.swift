@@ -8,7 +8,9 @@
 
 import SpriteKit
 
+typealias GetHitPlayerBullet = (() -> Void)
+
 class EnemyCarView: View {
     
-    
+    var getHitPlayerBullet: GetHitPlayerBullet?
 }

@@ -1,5 +1,5 @@
 //
-//  PoliceBulletController.swift
+//  PlayerBulletController.swift
 //  Oto
 //
 //  Created by Enrik on 10/2/16.
@@ -8,9 +8,9 @@
 
 import SpriteKit
 
-class PoliceBulletController: BaseController {
+class PlayerBulletController: BaseController {
     
-    let SPEED: Double = 40
+    let SPEED: Double = 60
     
     override func setup(parent: SKNode) {
         setupPhysics()
@@ -21,10 +21,8 @@ class PoliceBulletController: BaseController {
     func setupContact() {
         self.view.handleContact = {
             otherView in
-            if let playerCarView = otherView as? PlayerCarView {
-                if let getHitPoliceBullet = playerCarView.getHitPoliceBullet {
-                    getHitPoliceBullet()
-                }
+            if let enemyCarView = otherView as? EnemyCarView {
+                
             }
             self.view.removeFromParent()
         }
@@ -39,15 +37,17 @@ class PoliceBulletController: BaseController {
             SKAction.sequence([
                 SKAction.moveToY(parent.frame.height + self.view.frame.height, duration: timeToReachTop),
                 SKAction.removeFromParent()
-            ])
+                ])
         )
     }
     
     
     func setupPhysics() {
         self.view.physicsBody = SKPhysicsBody(rectangleOfSize: self.view.size)
-        self.view.physicsBody?.categoryBitMask = PHYSICS_MASK_POLICE_BULLET
+        self.view.physicsBody?.categoryBitMask = PHYSICS_MASK_PLAYER_BULLET
         self.view.physicsBody?.collisionBitMask = 0
-        self.view.physicsBody?.contactTestBitMask = PHYSICS_MASK_PLAYER_CAR
+        self.view.physicsBody?.contactTestBitMask = PHYSICS_MASK_ENEMY_CAR
     }
+
+    
 }

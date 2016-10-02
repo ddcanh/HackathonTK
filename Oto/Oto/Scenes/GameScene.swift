@@ -36,6 +36,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addPolice()
         addGiftPower()
         addGiftBomb()
+        addGiftBullet()
+        addGiftAmor()
+        
         configurePhysics()
         
 
@@ -136,7 +139,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let viewB = bodyB.node as! View
         
         if (bodyA.categoryBitMask | bodyB.categoryBitMask) == (PHYSICS_MASK_PLAYER_CAR | PHYSICS_MASK_POLICE_CAR) {
-            gameOver()
+            if playerCarController.isShielded == false {
+                gameOver()
+            }
         }
         
         if let aHandleContact = viewA.handleContact {
@@ -148,6 +153,69 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
+    }
+    
+    func addGiftAmor() {
+        if gameStage >= 2{
+            
+            let giftAmorSpawn = SKAction.runBlock {
+                
+                let giftAmorView = View(imageNamed: "GiftAmor")
+                
+                let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftAmorView.frame.width - MARGIN_BORDER * 2))) + giftAmorView.frame.width/2 + MARGIN_BORDER
+                
+                giftAmorView.position = CGPoint(x: postionX, y: self.frame.height)
+                
+                let giftAmorController = GiftAmorController(view: giftAmorView)
+                
+                giftAmorController.setup(self)
+                
+                self.addChild(giftAmorView)
+                
+            }
+            
+            let giftAmorSpawnPeriod = SKAction.sequence([
+                SKAction.waitForDuration(15),
+                giftAmorSpawn
+                ])
+            
+            self.runAction(SKAction.repeatActionForever(giftAmorSpawnPeriod))
+            
+            
+        }
+        
+
+    }
+    
+    func addGiftBullet() {
+        if gameStage >= 2{
+            
+            let giftBulletSpawn = SKAction.runBlock {
+                
+                let giftBulletView = View(imageNamed: "GiftBullet")
+                
+                let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftBulletView.frame.width - MARGIN_BORDER * 2))) + giftBulletView.frame.width/2 + MARGIN_BORDER
+                
+                giftBulletView.position = CGPoint(x: postionX, y: self.frame.height)
+                
+                let giftBulletController = GiftBulletController(view: giftBulletView)
+                
+                giftBulletController.setup(self)
+                
+                self.addChild(giftBulletView)
+                
+            }
+            
+            let giftBulletSpawnPeriod = SKAction.sequence([
+                SKAction.waitForDuration(18),
+                giftBulletSpawn
+                ])
+            
+            self.runAction(SKAction.repeatActionForever(giftBulletSpawnPeriod))
+            
+
+        }
+    
     }
     
     func addGiftBomb() {
@@ -230,7 +298,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func addPlayer() {
-        let playerView = PlayerCarView(imageNamed: "Car.png")
+        let playerView = PlayerCarView(imageNamed: "Car5.png")
         playerView.position = CGPoint(x: self.frame.width/2, y: 200)
         self.playerCarController = PlayerCarController(view: playerView)
         self.playerCarController.setup(self)

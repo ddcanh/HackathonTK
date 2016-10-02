@@ -11,6 +11,8 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var MARGIN_BORDER: CGFloat = 20
+    let SCORE_TO_NEXT_LEVEL = 2000
     
     var backgroundController: BackGroundController!
     var backGroundSpeed: CGFloat!
@@ -27,6 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0
     var scoreLabel: SKLabelNode!
     
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
@@ -41,6 +44,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         configurePhysics()
         
+        if gameStage == 3 {
+            MARGIN_BORDER = 30
+        }
     }
     
     func configurePhysics() {
@@ -67,9 +73,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 let dx = currentLocation.x - previousLocation.x
                 playerCarController.moveByDx(dx)
-                playerCarController.constraintMove(self)
+                constraintMove(playerCarController.view, parent: self)
                 
             }
+        }
+    }
+    
+    func constraintMove(view: SKSpriteNode, parent: SKNode) {
+        if view.position.x < view.frame.width/2 + MARGIN_BORDER  {
+            view.position.x = view.frame.width/2 + MARGIN_BORDER
+        } else if view.position.x > parent.frame.width - view.frame.width/2 - MARGIN_BORDER {
+            view.position.x = parent.frame.width - view.frame.width/2 - MARGIN_BORDER
         }
     }
     
@@ -123,7 +137,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 countForE = 0
             }
         }
-    
+        
+        if gameStage >= 3 {
+            if playerCarController.health > 10 {
+                playerCarController.health -= 0.1
+            }
+            
+        }
         
     }
     
@@ -171,7 +191,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 let giftAmorView = View(imageNamed: "GiftAmor")
                 
-                let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftAmorView.frame.width - MARGIN_BORDER * 2))) + giftAmorView.frame.width/2 + MARGIN_BORDER
+                let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftAmorView.frame.width - self.MARGIN_BORDER * 2))) + giftAmorView.frame.width/2 + self.MARGIN_BORDER
                 
                 giftAmorView.position = CGPoint(x: postionX, y: self.frame.height)
                 
@@ -203,7 +223,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 let giftBulletView = View(imageNamed: "GiftBullet")
                 
-                let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftBulletView.frame.width - MARGIN_BORDER * 2))) + giftBulletView.frame.width/2 + MARGIN_BORDER
+                let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftBulletView.frame.width - self.MARGIN_BORDER * 2))) + giftBulletView.frame.width/2 + self.MARGIN_BORDER
                 
                 giftBulletView.position = CGPoint(x: postionX, y: self.frame.height)
                 
@@ -233,7 +253,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let giftBombView = View(imageNamed: "Bomb")
 
-            let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftBombView.frame.width - MARGIN_BORDER * 2))) + giftBombView.frame.width/2 + MARGIN_BORDER
+            let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftBombView.frame.width - self.MARGIN_BORDER * 2))) + giftBombView.frame.width/2 + self.MARGIN_BORDER
             
             giftBombView.position = CGPoint(x: postionX, y: self.frame.height)
             
@@ -261,7 +281,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let giftPowerView = View(imageNamed: "health")
             
             
-            let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftPowerView.frame.width - MARGIN_BORDER * 2))) + giftPowerView.frame.width/2 + MARGIN_BORDER
+            let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - giftPowerView.frame.width - self.MARGIN_BORDER * 2))) + giftPowerView.frame.width/2 + self.MARGIN_BORDER
             
             giftPowerView.position = CGPoint(x: postionX, y: self.frame.height)
             
@@ -338,8 +358,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         score += 1
         scoreLabel.text = String(score)
         
-        if (score > 500) && (gameStage == 1) {
+        if (score > SCORE_TO_NEXT_LEVEL) {
+        if (gameStage == 1) {
             moveToStage(2)
+        } else if (gameStage == 2) {
+            moveToStage(3)
+        } else if (gameStage == 3) {
+            moveToStage(4)
+            }
         }
     }
     

@@ -27,5 +27,6 @@ let PHYSICS_MASK_GIFT_BULLET = UInt32(1 << 7)
 
 let PHYSICS_MASK_GIFT_AMOR = UInt32(1 << 8)
 
-let MARGIN_BORDER: CGFloat = 20
+
+
 

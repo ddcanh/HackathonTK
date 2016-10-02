@@ -64,14 +64,6 @@ class PlayerCarController: BaseController{
         self.view.physicsBody?.contactTestBitMask = PHYSICS_MASK_ENEMY_CAR | PHYSICS_MASK_POLICE_CAR
     }
     
-    func constraintMove(parent: SKNode) {
-        if view.position.x < view.frame.width/2 + MARGIN_BORDER  {
-            view.position.x = view.frame.width/2 + MARGIN_BORDER
-        } else if view.position.x > parent.frame.width - view.frame.width/2 - MARGIN_BORDER {
-            view.position.x = parent.frame.width - view.frame.width/2 - MARGIN_BORDER
-        }
-    }
-    
     func increaseHealthForPlayer() {
         self.health += 10
     }

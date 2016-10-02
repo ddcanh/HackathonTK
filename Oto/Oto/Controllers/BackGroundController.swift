@@ -21,7 +21,7 @@ class BackGroundController {
         
         addBackgroundMusic(parent)
         addBackGround(parent)
-        addBridge()
+        if gameStage < 3 {addBridge()}
         addTree()
     }
     
@@ -30,9 +30,6 @@ class BackGroundController {
             SKAction.sequence([
                 SKAction.runBlock({ 
                     if let musicURL = NSBundle.mainBundle().URLForResource("backGround_Sound", withExtension: "mp3") {
-                        
-                        print("addBackgroundMusic")
-                        
                         self.backgroundMusic = SKAudioNode(URL: musicURL)
                         
                     }
@@ -50,8 +47,8 @@ class BackGroundController {
     }
     
     func addBackGround(parent: SKNode){
-        backGround1 = SKSpriteNode(imageNamed: "backGround")
-        backGround2 = SKSpriteNode(imageNamed: "backGround")
+        backGround1 = SKSpriteNode(imageNamed: "backGround\(gameStage)")
+        backGround2 = SKSpriteNode(imageNamed: "backGround\(gameStage)")
         
         backGround1.anchorPoint = CGPointZero
         backGround1.position = CGPointZero
@@ -81,7 +78,8 @@ class BackGroundController {
     }
     
     func addBridge() {
-        bridge2 = SKSpriteNode(imageNamed: "bridge2.png")
+        
+        bridge2 = SKSpriteNode(imageNamed: "bridge\(gameStage).png")
         bridge2.position = CGPoint(x: backGround1.position.x + backGround1.size.width/2 , y: backGround1.position.y)
         
         bridge2.zPosition = 101
@@ -106,6 +104,7 @@ class BackGroundController {
         backGround2.addChild(tree2)
         backGround2.addChild(tree1)
         backGround2.addChild(tree3)
+        
     }
     
 }

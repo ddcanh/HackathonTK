@@ -12,8 +12,8 @@
 		455560DF1DA05734002E0016 /* GiftBombController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455560DE1DA05734002E0016 /* GiftBombController.swift */; };
 		455560E11DA06F4A002E0016 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 455560E01DA06F4A002E0016 /* Explosion.wav */; };
 		455560E31DA07003002E0016 /* Explosion2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 455560E21DA07003002E0016 /* Explosion2.wav */; };
-		455C624E1D850F67006DEEEB /* bridge2.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C624D1D850F67006DEEEB /* bridge2.png */; };
-		455C62501D850F6B006DEEEB /* bridge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C624F1D850F6B006DEEEB /* bridge1.png */; };
+		455C624E1D850F67006DEEEB /* bridge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C624D1D850F67006DEEEB /* bridge1.png */; };
+		455C62501D850F6B006DEEEB /* bridge2.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C624F1D850F6B006DEEEB /* bridge2.png */; };
 		455C62521D850F73006DEEEB /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 455C62511D850F73006DEEEB /* tree.png */; };
 		455C625F1D853552006DEEEB /* backGround_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 455C625E1D853552006DEEEB /* backGround_Sound.mp3 */; };
 		455C62611D853558006DEEEB /* CrashCar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 455C62601D853558006DEEEB /* CrashCar.mp3 */; };
@@ -37,7 +37,7 @@
 		4568F20F1D8457FE00D70B3E /* EnemyCar3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568F2081D8457FE00D70B3E /* EnemyCar3.png */; };
 		4568F2101D8457FE00D70B3E /* health.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568F2091D8457FE00D70B3E /* health.png */; };
 		4568F2131D8458DD00D70B3E /* EnemyCar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568F2121D8458DD00D70B3E /* EnemyCar2.png */; };
-		4568F2151D845D6000D70B3E /* backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568F2141D845D6000D70B3E /* backGround.png */; };
+		4568F2151D845D6000D70B3E /* backGround1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4568F2141D845D6000D70B3E /* backGround1.png */; };
 		4568F2181D84605100D70B3E /* CGPointUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568F2171D84605100D70B3E /* CGPointUtil.swift */; };
 		4583646D1DA0221E00269813 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4583646C1DA0221E00269813 /* logo.jpg */; };
 		458364721DA02A9D00269813 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 458364701DA02A9D00269813 /* GameScene.sks */; };
@@ -65,6 +65,9 @@
 		45C324081DA0AA0700EBDC08 /* Car3.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324041DA0AA0700EBDC08 /* Car3.png */; };
 		45C324091DA0AA0700EBDC08 /* Car4.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324051DA0AA0700EBDC08 /* Car4.png */; };
 		45C3240B1DA0B01D00EBDC08 /* Car.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3240A1DA0B01D00EBDC08 /* Car.png */; };
+		45C3240D1DA0C76900EBDC08 /* backGround2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3240C1DA0C76900EBDC08 /* backGround2.png */; };
+		45C324141DA0D09A00EBDC08 /* backGround3.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324131DA0D09A00EBDC08 /* backGround3.png */; };
+		45C324161DA0DB5E00EBDC08 /* backGround4.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324151DA0DB5E00EBDC08 /* backGround4.png */; };
 		45C366E81D86F5AF00EBF882 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45C366E61D86F5AF00EBF882 /* Explosion.sks */; };
 		45C366E91D86F5AF00EBF882 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C366E71D86F5AF00EBF882 /* spark.png */; };
 /* End PBXBuildFile section */
@@ -75,8 +78,8 @@
 		455560DE1DA05734002E0016 /* GiftBombController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiftBombController.swift; path = Controllers/GiftBombController.swift; sourceTree = "<group>"; };
 		455560E01DA06F4A002E0016 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
 		455560E21DA07003002E0016 /* Explosion2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion2.wav; sourceTree = "<group>"; };
-		455C624D1D850F67006DEEEB /* bridge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge2.png; sourceTree = "<group>"; };
-		455C624F1D850F6B006DEEEB /* bridge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge1.png; sourceTree = "<group>"; };
+		455C624D1D850F67006DEEEB /* bridge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge1.png; sourceTree = "<group>"; };
+		455C624F1D850F6B006DEEEB /* bridge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge2.png; sourceTree = "<group>"; };
 		455C62511D850F73006DEEEB /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		455C625E1D853552006DEEEB /* backGround_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backGround_Sound.mp3; sourceTree = "<group>"; };
 		455C62601D853558006DEEEB /* CrashCar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CrashCar.mp3; sourceTree = "<group>"; };
@@ -102,7 +105,7 @@
 		4568F2081D8457FE00D70B3E /* EnemyCar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnemyCar3.png; sourceTree = "<group>"; };
 		4568F2091D8457FE00D70B3E /* health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health.png; sourceTree = "<group>"; };
 		4568F2121D8458DD00D70B3E /* EnemyCar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnemyCar2.png; sourceTree = "<group>"; };
-		4568F2141D845D6000D70B3E /* backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround.png; sourceTree = "<group>"; };
+		4568F2141D845D6000D70B3E /* backGround1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround1.png; sourceTree = "<group>"; };
 		4568F2171D84605100D70B3E /* CGPointUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointUtil.swift; sourceTree = "<group>"; };
 		4583646C1DA0221E00269813 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		458364701DA02A9D00269813 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = Scenes/GameScene.sks; sourceTree = "<group>"; };
@@ -130,6 +133,9 @@
 		45C324041DA0AA0700EBDC08 /* Car3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car3.png; sourceTree = "<group>"; };
 		45C324051DA0AA0700EBDC08 /* Car4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car4.png; sourceTree = "<group>"; };
 		45C3240A1DA0B01D00EBDC08 /* Car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car.png; sourceTree = "<group>"; };
+		45C3240C1DA0C76900EBDC08 /* backGround2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround2.png; sourceTree = "<group>"; };
+		45C324131DA0D09A00EBDC08 /* backGround3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround3.png; sourceTree = "<group>"; };
+		45C324151DA0DB5E00EBDC08 /* backGround4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround4.png; sourceTree = "<group>"; };
 		45C366E61D86F5AF00EBF882 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		45C366E71D86F5AF00EBF882 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +251,9 @@
 		4568F2031D8457FE00D70B3E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				45C324101DA0C8BC00EBDC08 /* Bridge */,
+				45C3240F1DA0C81700EBDC08 /* BackGround */,
+				45C3240E1DA0C80700EBDC08 /* EnemyCar */,
 				45C324011DA0AA0000EBDC08 /* Car */,
 				45C323F51DA0970E00EBDC08 /* playerBullet.png */,
 				45C3240A1DA0B01D00EBDC08 /* Car.png */,
@@ -255,12 +264,6 @@
 				4583646C1DA0221E00269813 /* logo.jpg */,
 				45BA25741DA006AA002876DD /* launchImage.jpeg */,
 				455C62511D850F73006DEEEB /* tree.png */,
-				455C624F1D850F6B006DEEEB /* bridge1.png */,
-				455C624D1D850F67006DEEEB /* bridge2.png */,
-				4568F2141D845D6000D70B3E /* backGround.png */,
-				4568F2061D8457FE00D70B3E /* EnemyCar1.png */,
-				4568F2121D8458DD00D70B3E /* EnemyCar2.png */,
-				4568F2081D8457FE00D70B3E /* EnemyCar3.png */,
 				4568F2091D8457FE00D70B3E /* health.png */,
 				455C62631D853577006DEEEB /* EnemyCar4.png */,
 				45C323EB1DA0827700EBDC08 /* PoliceCar1.png */,
@@ -315,6 +318,36 @@
 				45C323FF1DA0A8A200EBDC08 /* Car5.png */,
 			);
 			name = Car;
+			sourceTree = "<group>";
+		};
+		45C3240E1DA0C80700EBDC08 /* EnemyCar */ = {
+			isa = PBXGroup;
+			children = (
+				4568F2061D8457FE00D70B3E /* EnemyCar1.png */,
+				4568F2121D8458DD00D70B3E /* EnemyCar2.png */,
+				4568F2081D8457FE00D70B3E /* EnemyCar3.png */,
+			);
+			name = EnemyCar;
+			sourceTree = "<group>";
+		};
+		45C3240F1DA0C81700EBDC08 /* BackGround */ = {
+			isa = PBXGroup;
+			children = (
+				4568F2141D845D6000D70B3E /* backGround1.png */,
+				45C3240C1DA0C76900EBDC08 /* backGround2.png */,
+				45C324131DA0D09A00EBDC08 /* backGround3.png */,
+				45C324151DA0DB5E00EBDC08 /* backGround4.png */,
+			);
+			name = BackGround;
+			sourceTree = "<group>";
+		};
+		45C324101DA0C8BC00EBDC08 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				455C624F1D850F6B006DEEEB /* bridge2.png */,
+				455C624D1D850F67006DEEEB /* bridge1.png */,
+			);
+			name = Bridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,7 +411,7 @@
 			files = (
 				455C62661D85357B006DEEEB /* PoliceCar2.png in Resources */,
 				45C323F81DA097C400EBDC08 /* PlayerBullet.wav in Resources */,
-				455C624E1D850F67006DEEEB /* bridge2.png in Resources */,
+				455C624E1D850F67006DEEEB /* bridge1.png in Resources */,
 				45C323E61DA0787800EBDC08 /* PoliceBullet.wav in Resources */,
 				455560E11DA06F4A002E0016 /* Explosion.wav in Resources */,
 				455C62611D853558006DEEEB /* CrashCar.mp3 in Resources */,
@@ -388,6 +421,7 @@
 				4583646D1DA0221E00269813 /* logo.jpg in Resources */,
 				45C324091DA0AA0700EBDC08 /* Car4.png in Resources */,
 				45C324061DA0AA0700EBDC08 /* Car1.png in Resources */,
+				45C324141DA0D09A00EBDC08 /* backGround3.png in Resources */,
 				45C323FA1DA0A2C800EBDC08 /* GiftAmor.png in Resources */,
 				458364721DA02A9D00269813 /* GameScene.sks in Resources */,
 				455C62641D853577006DEEEB /* EnemyCar4.png in Resources */,
@@ -404,14 +438,16 @@
 				455C625F1D853552006DEEEB /* backGround_Sound.mp3 in Resources */,
 				4568F2131D8458DD00D70B3E /* EnemyCar2.png in Resources */,
 				4568F1F71D8457EC00D70B3E /* Main.storyboard in Resources */,
-				4568F2151D845D6000D70B3E /* backGround.png in Resources */,
+				4568F2151D845D6000D70B3E /* backGround1.png in Resources */,
+				45C324161DA0DB5E00EBDC08 /* backGround4.png in Resources */,
 				455C62521D850F73006DEEEB /* tree.png in Resources */,
 				45C323F61DA0970E00EBDC08 /* playerBullet.png in Resources */,
 				4568F20D1D8457FE00D70B3E /* EnemyCar1.png in Resources */,
-				455C62501D850F6B006DEEEB /* bridge1.png in Resources */,
+				455C62501D850F6B006DEEEB /* bridge2.png in Resources */,
 				45C323EC1DA0827700EBDC08 /* PoliceCar1.png in Resources */,
 				4568F20F1D8457FE00D70B3E /* EnemyCar3.png in Resources */,
 				45BA25751DA006AA002876DD /* launchImage.jpeg in Resources */,
+				45C3240D1DA0C76900EBDC08 /* backGround2.png in Resources */,
 				45C366E81D86F5AF00EBF882 /* Explosion.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

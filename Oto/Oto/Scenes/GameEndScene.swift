@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameOverScene: SKScene {
+class GameEndScene: SKScene {
     
     var score: Int!
     
@@ -18,7 +18,7 @@ class GameOverScene: SKScene {
     }
     
     func addLabel() {
-        let labelGameOver = SKLabelNode(text: "Game Over")
+        let labelGameOver = SKLabelNode(text: "Victorious")
         labelGameOver.fontName = "Tahoma"
         labelGameOver.fontSize = 40
         labelGameOver.position = CGPoint(x: self.frame.width/2, y: self.frame.height/2)

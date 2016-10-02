@@ -24,6 +24,7 @@ class PlayerBulletController: BaseController {
             if let enemyCarView = otherView as? EnemyCarView {
                 
             }
+            
             self.view.removeFromParent()
         }
     }

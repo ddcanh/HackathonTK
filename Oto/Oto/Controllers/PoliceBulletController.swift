@@ -15,10 +15,10 @@ class PoliceBulletController: BaseController {
     override func setup(parent: SKNode) {
         setupPhysics()
         addActionFly(parent)
-        setupContact()
+        setupContact(parent)
     }
     
-    func setupContact() {
+    func setupContact(parent: SKNode) {
         self.view.handleContact = {
             otherView in
             if let playerCarView = otherView as? PlayerCarView {
@@ -26,6 +26,7 @@ class PoliceBulletController: BaseController {
                     getHitPoliceBullet()
                 }
             }
+            parent.runAction(SKAction.playSoundFileNamed("PlayerHitBullet.wav", waitForCompletion: false))
             self.view.removeFromParent()
         }
     }

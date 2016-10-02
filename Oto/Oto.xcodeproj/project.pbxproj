@@ -42,7 +42,7 @@
 		4583646D1DA0221E00269813 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4583646C1DA0221E00269813 /* logo.jpg */; };
 		458364721DA02A9D00269813 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 458364701DA02A9D00269813 /* GameScene.sks */; };
 		458364731DA02A9D00269813 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458364711DA02A9D00269813 /* GameScene.swift */; };
-		458364771DA02B3200269813 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458364761DA02B3200269813 /* GameOverScene.swift */; };
+		458364771DA02B3200269813 /* GameEndScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458364761DA02B3200269813 /* GameEndScene.swift */; };
 		45A33BA81D9F5A85006432AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A33BA71D9F5A85006432AC /* Constants.swift */; };
 		45A33BAA1D9F5CC0006432AC /* SKActionUti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A33BA91D9F5CC0006432AC /* SKActionUti.swift */; };
 		45A33BAC1D9F7771006432AC /* PoliceCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A33BAB1D9F7771006432AC /* PoliceCarController.swift */; };
@@ -56,7 +56,6 @@
 		45C323F41DA0965800EBDC08 /* GiftBulletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C323F31DA0965800EBDC08 /* GiftBulletController.swift */; };
 		45C323F61DA0970E00EBDC08 /* playerBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C323F51DA0970E00EBDC08 /* playerBullet.png */; };
 		45C323F81DA097C400EBDC08 /* PlayerBullet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C323F71DA097C400EBDC08 /* PlayerBullet.wav */; };
-		45C323FA1DA0A2C800EBDC08 /* GiftAmor.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C323F91DA0A2C800EBDC08 /* GiftAmor.png */; };
 		45C323FC1DA0A2D000EBDC08 /* GiftBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C323FB1DA0A2D000EBDC08 /* GiftBullet.png */; };
 		45C323FE1DA0A36D00EBDC08 /* GiftAmorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C323FD1DA0A36D00EBDC08 /* GiftAmorController.swift */; };
 		45C324001DA0A8A200EBDC08 /* Car5.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C323FF1DA0A8A200EBDC08 /* Car5.png */; };
@@ -73,6 +72,9 @@
 		45C3241C1DA0E5D500EBDC08 /* pothHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3241B1DA0E5D500EBDC08 /* pothHole.png */; };
 		45C3241E1DA0E6FC00EBDC08 /* pothHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3241D1DA0E6FC00EBDC08 /* pothHole.png */; };
 		45C324201DA0F6D400EBDC08 /* bulletPolice.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3241F1DA0F6D400EBDC08 /* bulletPolice.png */; };
+		45C324221DA1004000EBDC08 /* PlayerHitBullet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C324211DA1004000EBDC08 /* PlayerHitBullet.wav */; };
+		45C324241DA10AF000EBDC08 /* GiftAmor.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324231DA10AF000EBDC08 /* GiftAmor.png */; };
+		45C324261DA10B2000EBDC08 /* GiftWing.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324251DA10B2000EBDC08 /* GiftWing.png */; };
 		45C366E81D86F5AF00EBF882 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45C366E61D86F5AF00EBF882 /* Explosion.sks */; };
 		45C366E91D86F5AF00EBF882 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C366E71D86F5AF00EBF882 /* spark.png */; };
 /* End PBXBuildFile section */
@@ -115,7 +117,7 @@
 		4583646C1DA0221E00269813 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		458364701DA02A9D00269813 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = Scenes/GameScene.sks; sourceTree = "<group>"; };
 		458364711DA02A9D00269813 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = Scenes/GameScene.swift; sourceTree = "<group>"; };
-		458364761DA02B3200269813 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = Scenes/GameOverScene.swift; sourceTree = "<group>"; };
+		458364761DA02B3200269813 /* GameEndScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameEndScene.swift; path = Scenes/GameEndScene.swift; sourceTree = "<group>"; };
 		45A33BA71D9F5A85006432AC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
 		45A33BA91D9F5CC0006432AC /* SKActionUti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKActionUti.swift; path = Utilities/SKActionUti.swift; sourceTree = "<group>"; };
 		45A33BAB1D9F7771006432AC /* PoliceCarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoliceCarController.swift; path = Controllers/PoliceCarController.swift; sourceTree = "<group>"; };
@@ -129,7 +131,6 @@
 		45C323F31DA0965800EBDC08 /* GiftBulletController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiftBulletController.swift; path = Controllers/GiftBulletController.swift; sourceTree = "<group>"; };
 		45C323F51DA0970E00EBDC08 /* playerBullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerBullet.png; sourceTree = "<group>"; };
 		45C323F71DA097C400EBDC08 /* PlayerBullet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlayerBullet.wav; sourceTree = "<group>"; };
-		45C323F91DA0A2C800EBDC08 /* GiftAmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GiftAmor.png; sourceTree = "<group>"; };
 		45C323FB1DA0A2D000EBDC08 /* GiftBullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GiftBullet.png; sourceTree = "<group>"; };
 		45C323FD1DA0A36D00EBDC08 /* GiftAmorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiftAmorController.swift; path = Controllers/GiftAmorController.swift; sourceTree = "<group>"; };
 		45C323FF1DA0A8A200EBDC08 /* Car5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car5.png; sourceTree = "<group>"; };
@@ -146,6 +147,9 @@
 		45C3241B1DA0E5D500EBDC08 /* pothHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pothHole.png; sourceTree = "<group>"; };
 		45C3241D1DA0E6FC00EBDC08 /* pothHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pothHole.png; sourceTree = "<group>"; };
 		45C3241F1DA0F6D400EBDC08 /* bulletPolice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulletPolice.png; sourceTree = "<group>"; };
+		45C324211DA1004000EBDC08 /* PlayerHitBullet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PlayerHitBullet.wav; sourceTree = "<group>"; };
+		45C324231DA10AF000EBDC08 /* GiftAmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GiftAmor.png; sourceTree = "<group>"; };
+		45C324251DA10B2000EBDC08 /* GiftWing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GiftWing.png; sourceTree = "<group>"; };
 		45C366E61D86F5AF00EBF882 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		45C366E71D86F5AF00EBF882 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +168,7 @@
 		455C625D1D853539006DEEEB /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				45C324211DA1004000EBDC08 /* PlayerHitBullet.wav */,
 				45C324191DA0E30900EBDC08 /* PothHole.wav */,
 				45C323F71DA097C400EBDC08 /* PlayerBullet.wav */,
 				45C323E51DA0787800EBDC08 /* PoliceBullet.wav */,
@@ -272,7 +277,8 @@
 				45C3240A1DA0B01D00EBDC08 /* Car.png */,
 				45C3241D1DA0E6FC00EBDC08 /* pothHole.png */,
 				45C323E71DA0817300EBDC08 /* enemyBullet.png */,
-				45C323F91DA0A2C800EBDC08 /* GiftAmor.png */,
+				45C324231DA10AF000EBDC08 /* GiftAmor.png */,
+				45C324251DA10B2000EBDC08 /* GiftWing.png */,
 				45C323FB1DA0A2D000EBDC08 /* GiftBullet.png */,
 				455560DC1DA05715002E0016 /* Bomb.png */,
 				4583646C1DA0221E00269813 /* logo.jpg */,
@@ -318,7 +324,7 @@
 			children = (
 				458364701DA02A9D00269813 /* GameScene.sks */,
 				458364711DA02A9D00269813 /* GameScene.swift */,
-				458364761DA02B3200269813 /* GameOverScene.swift */,
+				458364761DA02B3200269813 /* GameEndScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -438,12 +444,13 @@
 				45C324091DA0AA0700EBDC08 /* Car4.png in Resources */,
 				45C324061DA0AA0700EBDC08 /* Car1.png in Resources */,
 				45C324141DA0D09A00EBDC08 /* backGround3.png in Resources */,
-				45C323FA1DA0A2C800EBDC08 /* GiftAmor.png in Resources */,
+				45C324241DA10AF000EBDC08 /* GiftAmor.png in Resources */,
 				458364721DA02A9D00269813 /* GameScene.sks in Resources */,
 				455C62641D853577006DEEEB /* EnemyCar4.png in Resources */,
 				455560E31DA07003002E0016 /* Explosion2.wav in Resources */,
 				45C3241C1DA0E5D500EBDC08 /* pothHole.png in Resources */,
 				45C366E91D86F5AF00EBF882 /* spark.png in Resources */,
+				45C324261DA10B2000EBDC08 /* GiftWing.png in Resources */,
 				45C324071DA0AA0700EBDC08 /* Car2.png in Resources */,
 				455560DD1DA05715002E0016 /* Bomb.png in Resources */,
 				45C324081DA0AA0700EBDC08 /* Car3.png in Resources */,
@@ -460,6 +467,7 @@
 				45C324161DA0DB5E00EBDC08 /* backGround4.png in Resources */,
 				455C62521D850F73006DEEEB /* tree.png in Resources */,
 				45C324201DA0F6D400EBDC08 /* bulletPolice.png in Resources */,
+				45C324221DA1004000EBDC08 /* PlayerHitBullet.wav in Resources */,
 				45C323F61DA0970E00EBDC08 /* playerBullet.png in Resources */,
 				4568F20D1D8457FE00D70B3E /* EnemyCar1.png in Resources */,
 				455C62501D850F6B006DEEEB /* bridge2.png in Resources */,
@@ -500,7 +508,7 @@
 				45C323F41DA0965800EBDC08 /* GiftBulletController.swift in Sources */,
 				45A33BAC1D9F7771006432AC /* PoliceCarController.swift in Sources */,
 				45C323F21DA0910000EBDC08 /* PlayerBulletController.swift in Sources */,
-				458364771DA02B3200269813 /* GameOverScene.swift in Sources */,
+				458364771DA02B3200269813 /* GameEndScene.swift in Sources */,
 				45A33BA81D9F5A85006432AC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

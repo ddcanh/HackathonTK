@@ -12,7 +12,7 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var MARGIN_BORDER: CGFloat = 20
-    let SCORE_TO_NEXT_LEVEL = 500
+    let SCORE_TO_NEXT_LEVEL = 2000
     
     var backgroundController: BackGroundController!
     var backGroundSpeed: CGFloat!
@@ -161,9 +161,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let viewB = bodyB.node as! View
         
         if (bodyA.categoryBitMask | bodyB.categoryBitMask) == (PHYSICS_MASK_PLAYER_CAR | PHYSICS_MASK_POLICE_CAR) {
-            if playerCarController.isShielded == false {
                 gameOver()
-            }
         }
         
         if let aHandleContact = viewA.handleContact {
@@ -177,20 +175,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    func didEndContact(contact: SKPhysicsContact) {
-        let bodyA = contact.bodyA
-        let bodyB = contact.bodyB
-        
-        if (bodyA.categoryBitMask | bodyB.categoryBitMask) == (PHYSICS_MASK_PLAYER_CAR | PHYSICS_MASK_POLICE_CAR) {
-            if playerCarController.isShielded == false {
-                gameOver()
-            }
-        }
-
-    }
     
     func addPothHole() {
-        if gameStage >= 1 {
+        if gameStage >= 3 {
             
             let pothHoleSpawn = SKAction.runBlock {
                 
@@ -402,6 +389,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if (gameStage == 3) {
             moveToStage(4)
             }
+        } else if (gameStage == 4) {
+            gameEnd()
         }
     }
     
@@ -481,6 +470,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(tapText)
         
         
+    }
+    
+    func gameEnd() {
+        self.paused = true
+        playerCarController.view.paused = true
+        
+        let gameEndScene = GameEndScene(size: (self.view?.frame.size)!)
+        
+        self.view?.presentScene(gameEndScene, transition: SKTransition.doorsCloseHorizontalWithDuration(1))
+
     }
     
 }

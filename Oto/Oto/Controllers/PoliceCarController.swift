@@ -66,7 +66,7 @@ class PoliceCarController: BaseController {
     }
     
     func addBullet(parent: SKNode) {
-        let policeBulletView = View(imageNamed: "enemyBullet.png")
+        let policeBulletView = View(imageNamed: "bulletPolice.png")
         policeBulletView.position = self.view.position
         
         let policeBulletController = PoliceBulletController(view: policeBulletView)

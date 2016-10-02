@@ -12,7 +12,7 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var MARGIN_BORDER: CGFloat = 20
-    let SCORE_TO_NEXT_LEVEL = 2000
+    let SCORE_TO_NEXT_LEVEL = 500
     
     var backgroundController: BackGroundController!
     var backGroundSpeed: CGFloat!
@@ -41,6 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addGiftBomb()
         addGiftBullet()
         addGiftAmor()
+        addPothHole()
         
         configurePhysics()
         
@@ -72,7 +73,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let previousLocation = touch.previousLocationInNode(self)
                 
                 let dx = currentLocation.x - previousLocation.x
-                playerCarController.moveByDx(dx)
+                if playerCarController.isSlow {
+                    playerCarController.moveByDx(dx/2)
+                } else {
+                    playerCarController.moveByDx(dx)
+                }
                 constraintMove(playerCarController.view, parent: self)
                 
             }
@@ -184,6 +189,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
+    func addPothHole() {
+        if gameStage >= 1 {
+            
+            let pothHoleSpawn = SKAction.runBlock {
+                
+                let pothHoleView = View(imageNamed: "pothHole")
+                
+                let postionX = CGFloat(arc4random_uniform(UInt32(self.frame.maxX - pothHoleView.frame.width - self.MARGIN_BORDER * 2))) + pothHoleView.frame.width/2 + self.MARGIN_BORDER
+                
+                pothHoleView.position = CGPoint(x: postionX, y: self.frame.height)
+                
+                let pothHoleController = PothHoleController(view: pothHoleView)
+                
+                pothHoleController.setup(self)
+                
+                pothHoleView.zPosition = 1
+                
+                self.addChild(pothHoleView)
+                
+            }
+            
+            let pothHoleSpawnPeriod = SKAction.sequence([
+                SKAction.waitForDuration(20),
+                pothHoleSpawn
+                ])
+            
+            self.runAction(SKAction.repeatActionForever(pothHoleSpawnPeriod))
+            
+        }
+    }
+    
     func addGiftAmor() {
         if gameStage >= 2{
             
@@ -209,11 +245,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 ])
             
             self.runAction(SKAction.repeatActionForever(giftAmorSpawnPeriod))
-            
-            
+      
         }
-        
-
     }
     
     func addGiftBullet() {
@@ -321,6 +354,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         enemyView.name = "enemy"
         
+        enemyView.zPosition = 2
         self.addChild(enemyView)
         
     }
@@ -332,6 +366,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.playerCarController = PlayerCarController(view: playerView)
         self.playerCarController.setup(self)
         playerView.name = "player"
+        playerView.zPosition = 2
         addChild(playerView)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(increasePlayerHealth(_:)), name: "Increase Health", object: nil)
@@ -345,6 +380,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         policeView.position = CGPoint(x: playerCarController.view.position.x, y: playerCarController.view.position.y - playerCarController.view.frame.height/2 - policeView.frame.height/2 - playerCarController.health)
         policeCarController = PoliceCarController(view: policeView)
         policeCarController.setup(self)
+        policeView.zPosition = 2
         addChild(policeView)
         
         if gameStage >= 2 {
@@ -397,6 +433,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         gameOverText.position = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
         
+        gameOverText.zPosition = ZPOSITION_TEXT
+        
         addChild(gameOverText)
         
         let tapText = SKLabelNode(text: "Tap To Replay")
@@ -404,6 +442,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapText.fontName = "Tahoma"
         tapText.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 30)
         
+        tapText.zPosition = ZPOSITION_TEXT
         addChild(tapText)
 
         
@@ -429,6 +468,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         moveStageText.fontSize = 30
         moveStageText.fontName = "Tahoma"
         moveStageText.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+        moveStageText.zPosition = ZPOSITION_TEXT
         
         addChild(moveStageText)
     
@@ -436,6 +476,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapText.fontSize = 20
         tapText.fontName = "Tahoma"
         tapText.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 30)
+        tapText.zPosition = ZPOSITION_TEXT
         
         addChild(tapText)
         

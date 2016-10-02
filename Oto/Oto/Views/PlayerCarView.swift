@@ -14,6 +14,7 @@ typealias CrashPolice = (() -> Void)
 typealias GetHitPoliceBullet = (() -> Void)
 typealias EatGiftBullet = (() -> Void)
 typealias EatGiftAmor = (() -> Void)
+typealias EatPothHole = (() -> Void)
 
 class PlayerCarView: View {
     var increaseHealth: IncreaseHealth?
@@ -22,4 +23,5 @@ class PlayerCarView: View {
     var getHitPoliceBullet: GetHitPoliceBullet?
     var eatGiftBullet: EatGiftBullet?
     var eatGiftAmor: EatGiftAmor?
+    var eatPothHole: EatPothHole?
 }

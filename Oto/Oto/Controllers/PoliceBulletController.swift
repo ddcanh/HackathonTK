@@ -45,7 +45,7 @@ class PoliceBulletController: BaseController {
     
     
     func setupPhysics() {
-        self.view.physicsBody = SKPhysicsBody(rectangleOfSize: self.view.size)
+        self.view.physicsBody = SKPhysicsBody(circleOfRadius: self.view.frame.width / 2 - 5 )
         self.view.physicsBody?.categoryBitMask = PHYSICS_MASK_POLICE_BULLET
         self.view.physicsBody?.collisionBitMask = 0
         self.view.physicsBody?.contactTestBitMask = PHYSICS_MASK_PLAYER_CAR

@@ -14,6 +14,7 @@ class PlayerCarController: BaseController{
     
     var health: CGFloat = 50
     var isShielded: Bool = false
+    var isSlow: Bool = false
     
     override func setup(parent: SKNode) {
        setupPhysics()
@@ -53,6 +54,9 @@ class PlayerCarController: BaseController{
             playerCarView.eatGiftAmor = {
                 self.takeShield()
                 
+            }
+            playerCarView.eatPothHole = {
+                self.slowMove()
             }
         }
     }
@@ -115,6 +119,32 @@ class PlayerCarController: BaseController{
                 })
             ])
         )
+    }
+    
+    func slowMove() {
+        
+        self.view.runAction(
+            SKAction.sequence([
+                SKAction.runBlock({ 
+                    self.isSlow = true
+                }),
+                SKAction.repeatAction(SKAction.sequence([
+                   SKAction.rotateByAngle(0.1, duration: 0.3),
+                   SKAction.rotateByAngle(-0.1, duration: 0.3)
+                        ])
+                        , count: 8)
+                ,
+                SKAction.waitForDuration(4),
+                SKAction.runBlock({ 
+                    self.isSlow = false
+                })
+                
+                
+            ])
+            
+        )
+        
+        self.view.zRotation = 0
     }
 
 }

@@ -41,9 +41,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         configurePhysics()
         
-
-        //addLight()
-        
     }
     
     func configurePhysics() {
@@ -153,6 +150,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
+    }
+    
+    func didEndContact(contact: SKPhysicsContact) {
+        let bodyA = contact.bodyA
+        let bodyB = contact.bodyB
+        
+        if (bodyA.categoryBitMask | bodyB.categoryBitMask) == (PHYSICS_MASK_PLAYER_CAR | PHYSICS_MASK_POLICE_CAR) {
+            if playerCarController.isShielded == false {
+                gameOver()
+            }
+        }
+
     }
     
     func addGiftAmor() {
@@ -309,27 +318,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    //    func addLight() {
-    //
-    //        let light = SKLightNode()
-    //        light.falloff = 1
-    //        light.categoryBitMask = 1
-    //        light.setScale(2)
-    //        light.ambientColor = UIColor.darkGrayColor()
-    //
-    //        backGround1.lightingBitMask = 1
-    //        backGround2.lightingBitMask = 1
-    //        police.shadowCastBitMask = 1
-    //        police.lightingBitMask = 1
-    //
-    //        for enemy in enemys {
-    //            enemy.shadowCastBitMask = 1
-    //            enemy.lightingBitMask = 1
-    //        }
-    //
-    //        player.addChild(light)
-    //    }
-    
+
     func addPolice() {
         let policeView = PoliceCarView(imageNamed: "PoliceCar2")
         
@@ -384,7 +373,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(gameOverText)
         
-        //playerCarController.view.removeFromParent()
+        let tapText = SKLabelNode(text: "Tap To Replay")
+        tapText.fontSize = 20
+        tapText.fontName = "Tahoma"
+        tapText.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 30)
+        
+        addChild(tapText)
+
         
         playerCarController.view.paused = true
         

@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var MARGIN_BORDER: CGFloat = 20
     let SCORE_TO_NEXT_LEVEL = 2000
+    let MINIMAL_HEALTH: CGFloat = 20
     
     var backgroundController: BackGroundController!
     var backGroundSpeed: CGFloat!
@@ -144,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if gameStage >= 3 {
-            if playerCarController.health > 10 {
+            if playerCarController.health > MINIMAL_HEALTH {
                 playerCarController.health -= 0.1
             }
             
@@ -469,15 +470,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(tapText)
         
-        
     }
     
     func gameEnd() {
+        gameStage = 1
         self.paused = true
         playerCarController.view.paused = true
         
         let gameEndScene = GameEndScene(size: (self.view?.frame.size)!)
-        
+        gameEndScene.score = self.score
         self.view?.presentScene(gameEndScene, transition: SKTransition.doorsCloseHorizontalWithDuration(1))
 
     }

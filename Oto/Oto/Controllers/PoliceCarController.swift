@@ -72,7 +72,7 @@ class PoliceCarController: BaseController {
         let policeBulletController = PoliceBulletController(view: policeBulletView)
         policeBulletController.setup(parent)
         parent.runAction(SKAction.playSoundFileNamed("PoliceBullet.wav", waitForCompletion: false))
-        
+        policeBulletView.zPosition = ZPOSITION_BULLET
         parent.addChild(policeBulletView)
     }
     

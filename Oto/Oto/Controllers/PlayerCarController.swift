@@ -92,7 +92,7 @@ class PlayerCarController: BaseController{
         let playerBulletController = PlayerBulletController(view: playerBulletView)
         playerBulletController.setup(parent)
         parent.runAction(SKAction.playSoundFileNamed("PlayerBullet.wav", waitForCompletion: false))
-        
+        playerBulletView.zPosition = ZPOSITION_BULLET
         parent.addChild(playerBulletView)
     }
     

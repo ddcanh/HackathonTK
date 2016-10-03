@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J7x-ra-bHM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,7 +16,56 @@
                     <view key="view" contentMode="scaleToFill" id="axn-2T-q2J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="J7i-y8-mVW">
+                                <rect key="frame" x="0.0" y="142" width="375" height="380"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4U-3I-Gu5">
+                                <rect key="frame" x="105" y="530" width="164" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="6vd-qH-a7M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play Game"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="8Se-4M-Gl0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOT PURSUIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM8-R9-T5g">
+                                <rect key="frame" x="20" y="65" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TO2-gG-CTt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-2p-7hk">
+                                <rect key="frame" x="136" y="626" width="103" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="Xh6-PB-HhA"/>
+                                    <constraint firstAttribute="height" constant="21" id="f0a-7G-05j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="J7i-y8-mVW" secondAttribute="trailing" id="4RL-TT-QKU"/>
+                            <constraint firstItem="KM8-R9-T5g" firstAttribute="leading" secondItem="axn-2T-q2J" secondAttribute="leadingMargin" constant="4" id="Lap-xW-Nxg"/>
+                            <constraint firstItem="KM8-R9-T5g" firstAttribute="top" secondItem="Q2w-RF-NeP" secondAttribute="bottom" constant="45" id="N0F-SQ-JmP"/>
+                            <constraint firstItem="J7i-y8-mVW" firstAttribute="top" secondItem="KM8-R9-T5g" secondAttribute="bottom" constant="27" id="N45-ty-oiv"/>
+                            <constraint firstItem="J7i-y8-mVW" firstAttribute="leading" secondItem="axn-2T-q2J" secondAttribute="leading" id="SYM-TS-ego"/>
+                            <constraint firstItem="KM8-R9-T5g" firstAttribute="centerX" secondItem="J7i-y8-mVW" secondAttribute="centerX" id="Yf3-WY-VrM"/>
+                            <constraint firstAttribute="bottom" secondItem="Qg2-2p-7hk" secondAttribute="bottom" constant="20" symbolic="YES" id="Yra-LM-ZhR"/>
+                            <constraint firstItem="o4U-3I-Gu5" firstAttribute="leading" secondItem="axn-2T-q2J" secondAttribute="leadingMargin" constant="89" id="bp7-QE-fSm"/>
+                            <constraint firstItem="o4U-3I-Gu5" firstAttribute="centerX" secondItem="Qg2-2p-7hk" secondAttribute="centerX" id="fCG-8J-Dmc"/>
+                            <constraint firstItem="o4U-3I-Gu5" firstAttribute="top" secondItem="J7i-y8-mVW" secondAttribute="bottom" constant="8" symbolic="YES" id="hNL-4e-p90"/>
+                            <constraint firstItem="Qg2-2p-7hk" firstAttribute="top" secondItem="o4U-3I-Gu5" secondAttribute="bottom" constant="51" id="hUq-dZ-JOb"/>
+                            <constraint firstItem="J7i-y8-mVW" firstAttribute="centerX" secondItem="o4U-3I-Gu5" secondAttribute="centerX" id="naI-Cf-qBX"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -43,4 +93,7 @@
             <point key="canvasLocation" x="270.5" y="302.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.jpg" width="2560" height="1600"/>
+    </resources>
 </document>

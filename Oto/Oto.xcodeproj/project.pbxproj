@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454708E51DA288E30001725C /* backGround4.png in Resources */ = {isa = PBXBuildFile; fileRef = 454708E41DA288E30001725C /* backGround4.png */; };
+		454708E71DA288E90001725C /* backGround2.png in Resources */ = {isa = PBXBuildFile; fileRef = 454708E61DA288E90001725C /* backGround2.png */; };
 		455560D91DA05491002E0016 /* Powerup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 455560D81DA05491002E0016 /* Powerup.wav */; };
 		455560DD1DA05715002E0016 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 455560DC1DA05715002E0016 /* Bomb.png */; };
 		455560DF1DA05734002E0016 /* GiftBombController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455560DE1DA05734002E0016 /* GiftBombController.swift */; };
@@ -64,9 +66,7 @@
 		45C324081DA0AA0700EBDC08 /* Car3.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324041DA0AA0700EBDC08 /* Car3.png */; };
 		45C324091DA0AA0700EBDC08 /* Car4.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324051DA0AA0700EBDC08 /* Car4.png */; };
 		45C3240B1DA0B01D00EBDC08 /* Car.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3240A1DA0B01D00EBDC08 /* Car.png */; };
-		45C3240D1DA0C76900EBDC08 /* backGround2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3240C1DA0C76900EBDC08 /* backGround2.png */; };
 		45C324141DA0D09A00EBDC08 /* backGround3.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324131DA0D09A00EBDC08 /* backGround3.png */; };
-		45C324161DA0DB5E00EBDC08 /* backGround4.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C324151DA0DB5E00EBDC08 /* backGround4.png */; };
 		45C324181DA0E1E100EBDC08 /* PothHoleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324171DA0E1E100EBDC08 /* PothHoleController.swift */; };
 		45C3241A1DA0E30900EBDC08 /* PothHole.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C324191DA0E30900EBDC08 /* PothHole.wav */; };
 		45C3241C1DA0E5D500EBDC08 /* pothHole.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C3241B1DA0E5D500EBDC08 /* pothHole.png */; };
@@ -80,6 +80,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		454708E41DA288E30001725C /* backGround4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround4.png; sourceTree = "<group>"; };
+		454708E61DA288E90001725C /* backGround2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround2.png; sourceTree = "<group>"; };
 		455560D81DA05491002E0016 /* Powerup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Powerup.wav; sourceTree = "<group>"; };
 		455560DC1DA05715002E0016 /* Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bomb.png; sourceTree = "<group>"; };
 		455560DE1DA05734002E0016 /* GiftBombController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiftBombController.swift; path = Controllers/GiftBombController.swift; sourceTree = "<group>"; };
@@ -139,9 +141,7 @@
 		45C324041DA0AA0700EBDC08 /* Car3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car3.png; sourceTree = "<group>"; };
 		45C324051DA0AA0700EBDC08 /* Car4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car4.png; sourceTree = "<group>"; };
 		45C3240A1DA0B01D00EBDC08 /* Car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car.png; sourceTree = "<group>"; };
-		45C3240C1DA0C76900EBDC08 /* backGround2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround2.png; sourceTree = "<group>"; };
 		45C324131DA0D09A00EBDC08 /* backGround3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround3.png; sourceTree = "<group>"; };
-		45C324151DA0DB5E00EBDC08 /* backGround4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround4.png; sourceTree = "<group>"; };
 		45C324171DA0E1E100EBDC08 /* PothHoleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PothHoleController.swift; path = Controllers/PothHoleController.swift; sourceTree = "<group>"; };
 		45C324191DA0E30900EBDC08 /* PothHole.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PothHole.wav; sourceTree = "<group>"; };
 		45C3241B1DA0E5D500EBDC08 /* pothHole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pothHole.png; sourceTree = "<group>"; };
@@ -355,9 +355,9 @@
 			isa = PBXGroup;
 			children = (
 				4568F2141D845D6000D70B3E /* backGround1.png */,
-				45C3240C1DA0C76900EBDC08 /* backGround2.png */,
+				454708E61DA288E90001725C /* backGround2.png */,
 				45C324131DA0D09A00EBDC08 /* backGround3.png */,
-				45C324151DA0DB5E00EBDC08 /* backGround4.png */,
+				454708E41DA288E30001725C /* backGround4.png */,
 			);
 			name = BackGround;
 			sourceTree = "<group>";
@@ -440,6 +440,7 @@
 				455560D91DA05491002E0016 /* Powerup.wav in Resources */,
 				45C323E81DA0817300EBDC08 /* enemyBullet.png in Resources */,
 				45C3241A1DA0E30900EBDC08 /* PothHole.wav in Resources */,
+				454708E71DA288E90001725C /* backGround2.png in Resources */,
 				4583646D1DA0221E00269813 /* logo.jpg in Resources */,
 				45C324091DA0AA0700EBDC08 /* Car4.png in Resources */,
 				45C324061DA0AA0700EBDC08 /* Car1.png in Resources */,
@@ -460,11 +461,11 @@
 				4568F2101D8457FE00D70B3E /* health.png in Resources */,
 				4568F1F91D8457EC00D70B3E /* Assets.xcassets in Resources */,
 				45C323FC1DA0A2D000EBDC08 /* GiftBullet.png in Resources */,
+				454708E51DA288E30001725C /* backGround4.png in Resources */,
 				455C625F1D853552006DEEEB /* backGround_Sound.mp3 in Resources */,
 				4568F2131D8458DD00D70B3E /* EnemyCar2.png in Resources */,
 				4568F1F71D8457EC00D70B3E /* Main.storyboard in Resources */,
 				4568F2151D845D6000D70B3E /* backGround1.png in Resources */,
-				45C324161DA0DB5E00EBDC08 /* backGround4.png in Resources */,
 				455C62521D850F73006DEEEB /* tree.png in Resources */,
 				45C324201DA0F6D400EBDC08 /* bulletPolice.png in Resources */,
 				45C324221DA1004000EBDC08 /* PlayerHitBullet.wav in Resources */,
@@ -474,7 +475,6 @@
 				45C323EC1DA0827700EBDC08 /* PoliceCar1.png in Resources */,
 				4568F20F1D8457FE00D70B3E /* EnemyCar3.png in Resources */,
 				45BA25751DA006AA002876DD /* launchImage.jpeg in Resources */,
-				45C3240D1DA0C76900EBDC08 /* backGround2.png in Resources */,
 				45C366E81D86F5AF00EBF882 /* Explosion.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

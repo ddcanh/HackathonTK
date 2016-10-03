@@ -389,9 +389,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             moveToStage(3)
         } else if (gameStage == 3) {
             moveToStage(4)
-            }
-        } else if (gameStage == 4) {
+        }
+         else if (gameStage == 4) {
             gameEnd()
+        }
         }
     }
     
